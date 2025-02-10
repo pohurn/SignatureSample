@@ -1,12 +1,18 @@
-﻿namespace SignatureApp
+﻿using SignatureApp.Views;
+
+namespace SignatureApp
 {
     public partial class App : Application
     {
+        public static NavigationPage np;
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            np = new NavigationPage(new SignaturePage());
+
+            MainPage = np;
         }
     }
 }

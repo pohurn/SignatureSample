@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:signaturePad="clr-namespace:Syncfusion.Maui.SignaturePad;assembly=Syncfusion.Maui.SignaturePad"
+             x:Class="SignatureApp.Views.SignaturePage"
+             Title="SignaturePage" BackgroundColor="#FFFFFF">
+
+    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="SignLabel" Grid.Row="1" Grid.Column="1" Text="Please sign below" Margin="0,0,0,15" FontSize="Medium" FontAttributes="Bold" TextColor="#000000"/>
+
+            <Frame Grid.Row="2" Grid.Column="1" Padding="0" HeightRequest="250" Margin="0,0,0,50" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <signaturePad:SfSignaturePad x:Name="signaturePad" StrokeColor="#000000" DrawStarted="SignatureStarted" BackgroundColor="#FFFFFF"  />
+            </Frame>
+
+
+            <Button Grid.Row="3" Grid.Column="1" Text="Clear signature" TextColor="#FFFFFF" FontSize="17.0" FontAttributes="Bold" Clicked="ClearSignatureClicked" Background="#ff2441"/>
+
+            <Button x:Name="Savebtn" IsVisible="false" Grid.Row="4" Grid.Column="1" Margin="0,20,0,0" Text="Save signature" TextColor="#FFFFFF" FontSize="17.0" FontAttributes="Bold" Clicked="SaveSignatureClicked" Background="#87db00"/>
+
+        </Grid>
+    </Grid>
+
+
+</ContentPage>
